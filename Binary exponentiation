@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+#define ll long long
+
+ll Power(ll a, ll p){
+    if(p == 0)return 1ll;
+    else if(p & 1){
+        return (a * Power(a, p-1));
+    }
+    else{
+        ll ret = Power(a,p/2);
+        return (ret * ret);
+    }
+}
+
+int main()
+{
+    cout << Power(3,4) << endl;
+}
